@@ -1,5 +1,5 @@
 ﻿@page
-@model CoreCRUD.Pages.Destinations.DetailsModel
+@model CoreCrud.Pages.Destinations.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -34,12 +34,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Destination.AverageTemp)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Destination.Country)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Destination.Country)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Destination.Location)

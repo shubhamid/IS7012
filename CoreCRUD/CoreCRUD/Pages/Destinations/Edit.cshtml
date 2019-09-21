@@ -1,5 +1,5 @@
 ﻿@page
-@model CoreCRUD.Pages.Destinations.EditModel
+@model CoreCrud.Pages.Destinations.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -35,14 +35,9 @@
                 <span asp-validation-for="Destination.AverageTemp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Destination.Country" class="control-label"></label>
-                <input asp-for="Destination.Country" class="form-control" />
-                <span asp-validation-for="Destination.Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Destination.CountryId" class="control-label"></label>
-                <select asp-for="Destination.CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
-                <span asp-validation-for="Destination.CountryId" class="text-danger"></span>
+                <label asp-for="Destination.LocationId" class="control-label"></label>
+                <select asp-for="Destination.LocationId" class="form-control" asp-items="ViewBag.LocationId"></select>
+                <span asp-validation-for="Destination.LocationId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

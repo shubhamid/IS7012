@@ -1,5 +1,5 @@
 ﻿@page
-@model CoreCRUD.Pages.Destinations.IndexModel
+@model CoreCrud.Pages.Destinations.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -26,9 +26,6 @@
                 @Html.DisplayNameFor(model => model.Destination[0].AverageTemp)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Destination[0].Country)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Destination[0].Location)
             </th>
             <th></th>
@@ -48,9 +45,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AverageTemp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Location.ID)

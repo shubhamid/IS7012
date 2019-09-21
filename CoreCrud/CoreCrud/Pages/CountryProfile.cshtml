@@ -1,0 +1,41 @@
+﻿@page
+@model CoreCrud.Pages.CountryProfileModel
+@{
+    ViewData["Title"] = "CountryProfile";
+}
+
+<h1>Country Profile</h1>
+<h2>@Model.Country.Name</h2>
+<div class="card-body">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Destination Name</th>
+                <th>Arrival Time</th>
+                <th>Average Temperature</th>
+                <th>Overnight Stay</th>
+                <th>Accomodation Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var code in Model.Country.Destinations)
+            {
+            <tr>
+                <td>@code.DestinationName</td>
+                <td>@code.ArrivalTime</td>
+                <td>@code.AverageTemp</td>
+                <td>@code.OvernightStay</td>
+                @if (code.IsAccomodationRequired.Equals(-1))
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td>No</td>
+                }
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

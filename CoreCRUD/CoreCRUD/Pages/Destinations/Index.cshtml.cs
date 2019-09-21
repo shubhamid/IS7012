@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CoreCRUD.Models;
 using CoreCrud.Models;
 
-namespace CoreCRUD.Pages.Destinations
+namespace CoreCrud.Pages.Destinations
 {
     public class IndexModel : PageModel
     {
-        private readonly CoreCRUD.Models.CoreCRUDContext _context;
+        private readonly CoreCrud.Models.CoreCrud09212019Context _context;
 
-        public IndexModel(CoreCRUD.Models.CoreCRUDContext context)
+        public IndexModel(CoreCrud.Models.CoreCrud09212019Context context)
         {
             _context = context;
         }

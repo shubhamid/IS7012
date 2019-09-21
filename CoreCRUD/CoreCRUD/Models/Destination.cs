@@ -15,11 +15,18 @@ namespace CoreCrud.Models
 
         [Column(TypeName = "decimal(18, 2)")]
         public decimal AverageTemp { get; set; }
-        public string Country { get; set; }
 
         // relationship
-        public int? CountryId { get; set; }
+        public int LocationId { get; set; }
         public Country Location { get; set; }
 
+        [NotMapped]
+        public int IsAccomodationRequired
+        {
+            get
+            {
+                return DateTime.Compare(DateTime.Now, ArrivalTime);
+            }
+        }
     }
 }

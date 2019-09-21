@@ -5,23 +5,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using CoreCRUD.Models;
 using CoreCrud.Models;
 
-namespace CoreCRUD.Pages.Destinations
+namespace CoreCrud.Pages.Destinations
 {
     public class CreateModel : PageModel
     {
-        private readonly CoreCRUD.Models.CoreCRUDContext _context;
+        private readonly CoreCrud.Models.CoreCrud09212019Context _context;
 
-        public CreateModel(CoreCRUD.Models.CoreCRUDContext context)
+        public CreateModel(CoreCrud.Models.CoreCrud09212019Context context)
         {
             _context = context;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["CountryId"] = new SelectList(_context.Set<Country>(), "ID", "ID");
+        ViewData["LocationId"] = new SelectList(_context.Country, "ID", "ID");
             return Page();
         }
 

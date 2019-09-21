@@ -6,16 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CoreCRUD.Models;
 using CoreCrud.Models;
 
-namespace CoreCRUD.Pages.Destinations
+namespace CoreCrud.Pages.Destinations
 {
     public class EditModel : PageModel
     {
-        private readonly CoreCRUD.Models.CoreCRUDContext _context;
+        private readonly CoreCrud.Models.CoreCrud09212019Context _context;
 
-        public EditModel(CoreCRUD.Models.CoreCRUDContext context)
+        public EditModel(CoreCrud.Models.CoreCrud09212019Context context)
         {
             _context = context;
         }
@@ -37,7 +36,7 @@ namespace CoreCRUD.Pages.Destinations
             {
                 return NotFound();
             }
-           ViewData["CountryId"] = new SelectList(_context.Set<Country>(), "ID", "ID");
+           ViewData["LocationId"] = new SelectList(_context.Country, "ID", "ID");
             return Page();
         }
 

@@ -1,0 +1,51 @@
+﻿@page
+@model CoreCrud.Pages.QuickGlanceModel
+@{
+    ViewData["Title"] = "QuickGlance";
+}
+
+<h1>Quick Glance</h1>
+<div class="card-body">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Destination Name</th>
+                <th>Arrival Time</th>
+                <th>Average Temperature</th>
+                <th>Overnight Stay</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var code in Model.Destinations)
+            {
+            <tr>
+                <td>@code.DestinationName</td>
+                <td>@code.ArrivalTime</td>
+                <td>@code.AverageTemp</td>
+                <td>@code.OvernightStay</td>
+                @if (@code.LocationId == 1)
+                {
+                    <td>Brazil</td>
+                }
+                @if (@code.LocationId == 2)
+                {
+                    <td>Russia</td>
+                }
+                @if (@code.LocationId == 3)
+                {
+                    <td>India</td>
+                }
+                @if (@code.LocationId == 4)
+                {
+                    <td>China</td>
+                }
+                @if (@code.LocationId == 5)
+                {
+                    <td>South Africa</td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using CoreCRUD.Models;
+using CoreCrud.Models;
 
-namespace CoreCRUD
+namespace CoreCrud
 {
     public class Startup
     {
@@ -35,8 +35,9 @@ namespace CoreCRUD
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<CoreCRUDContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("CoreCRUDContext")));
+            services.AddDbContext<CoreCrud09212019Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("CoreCrud09212019Context")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
