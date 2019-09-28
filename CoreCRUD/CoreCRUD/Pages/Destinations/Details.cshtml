@@ -5,7 +5,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Destination Details</h1>
 
 <div>
     <h4>Destination</h4>
@@ -36,10 +36,28 @@
             @Html.DisplayFor(model => model.Destination.AverageTemp)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination.CityAgentEmailAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destination.CityAgentEmailAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination.CityAgentCellPhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destination.CityAgentCellPhone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination.CityInstagramProfile)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destination.CityInstagramProfile)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Destination.Location)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Destination.Location.ID)
+            @Html.DisplayFor(model => model.Destination.Location.Name)
         </dd>
     </dl>
 </div>

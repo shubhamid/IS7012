@@ -25,7 +25,9 @@ namespace CoreCrud.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.HasKey("ID");
 
@@ -43,7 +45,18 @@ namespace CoreCrud.Migrations
                     b.Property<decimal>("AverageTemp")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("DestinationName");
+                    b.Property<string>("CityAgentCellPhone")
+                        .HasMaxLength(11);
+
+                    b.Property<string>("CityAgentEmailAddress")
+                        .IsRequired();
+
+                    b.Property<string>("CityInstagramProfile")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("DestinationName")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<int>("LocationId");
 

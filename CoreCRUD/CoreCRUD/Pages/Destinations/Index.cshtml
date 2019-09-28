@@ -5,11 +5,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Destinations Details</h1>
+<h6>Have a quick look at all the destination details here.</h6>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<img src="http://static1.squarespace.com/static/57b9b98a29687f1ef5c622df/57b9bacc8748e3f017514817/57b9bacc8748e3f017514985/1531156528365/0Cover.jpg?format=1500w" alt="dest" width="600" height="256"/>
 <table class="table">
     <thead>
         <tr>
@@ -24,6 +27,15 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Destination[0].AverageTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].CityAgentEmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].CityAgentCellPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].CityInstagramProfile)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Destination[0].Location)
@@ -47,7 +59,16 @@
                 @Html.DisplayFor(modelItem => item.AverageTemp)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location.ID)
+                @Html.DisplayFor(modelItem => item.CityAgentEmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityAgentCellPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityInstagramProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
