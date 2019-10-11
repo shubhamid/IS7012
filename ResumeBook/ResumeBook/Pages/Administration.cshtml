@@ -1,0 +1,26 @@
+﻿@page
+@model ResumeBook.Pages.AdministrationModel
+@{
+    ViewData["Title"] = "Administration";
+}
+    <div class="text-left">
+        <h1 class="display-4">Administration</h1>
+        <p>Access database here.</p>
+    </div>
+
+    <div >
+        <ul>
+            <li>
+                <a  asp-area="" asp-page="/Candidates/Index">Candidates</a>
+            </li>
+            <li>
+                <a  asp-area="" asp-page="/Educations/Index">Educations</a>
+            </li>
+            <li>
+                <a  asp-area="" asp-page="/Experiences/Index">Experiences</a>
+            </li>
+            <li>
+                <a asp-area="" asp-page="/Projects/Index">Projects</a>
+            </li>
+        </ul>
+    </div>

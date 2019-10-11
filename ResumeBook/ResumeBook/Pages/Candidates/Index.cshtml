@@ -1,0 +1,108 @@
+﻿@page
+@model ResumeBook.Pages.Candidates.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Candidate Directory</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].MiddleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].Headline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].CurrentEducation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].Zipcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].Industry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].TotalYearsOfExperience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].About)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Candidate) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Headline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentEducation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Industry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalYearsOfExperience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.About)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

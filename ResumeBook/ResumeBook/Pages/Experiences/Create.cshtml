@@ -1,0 +1,68 @@
+﻿@page
+@model ResumeBook.Pages.Experiences.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Experience</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Experience.Title" class="control-label"></label>
+                <input asp-for="Experience.Title" class="form-control" />
+                <span asp-validation-for="Experience.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience.Company" class="control-label"></label>
+                <input asp-for="Experience.Company" class="form-control" />
+                <span asp-validation-for="Experience.Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience.City" class="control-label"></label>
+                <input asp-for="Experience.City" class="form-control" />
+                <span asp-validation-for="Experience.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience.Country" class="control-label"></label>
+                <input asp-for="Experience.Country" class="form-control" />
+                <span asp-validation-for="Experience.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Experience.CurrentlyWorkingHere" /> @Html.DisplayNameFor(model => model.Experience.CurrentlyWorkingHere))
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience.StartDate" class="control-label"></label>
+                <input asp-for="Experience.StartDate" class="form-control" />
+                <span asp-validation-for="Experience.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience.EndDate" class="control-label"></label>
+                <input asp-for="Experience.EndDate" class="form-control" />
+                <span asp-validation-for="Experience.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience.CandidateId" class="control-label"></label>
+                <select asp-for="Experience.CandidateId" class ="form-control" asp-items="ViewBag.CandidateId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

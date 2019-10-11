@@ -1,0 +1,61 @@
+﻿@page
+@model ResumeBook.Pages.Educations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Education</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.School)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.School)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.Degree)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.Degree)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.Country)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.Candidate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.Candidate.FirstName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Education.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
