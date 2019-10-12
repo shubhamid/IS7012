@@ -1,0 +1,33 @@
+﻿@page
+@model ResumeBook.Pages.UpdateCurrentEducationFormModel
+@{
+    ViewData["Title"] = "UpdateCurrentEducationForm";
+}
+
+<h1>Update Current Education Form</h1>
+
+<form method="post" style="margin-top: 50px;">
+    <div class="form-group">
+        <label class="control-label">Agent Name</label>
+        <div>
+            <p class="form-control-static">@Model.Candidate.FirstName @Model.Candidate.LastName</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Current Education</label>
+        <div>
+            <p class="form-control-static">@Model.Candidate.CurrentEducation</p>
+        </div>
+    </div>
+    <input type="hidden" asp-for="UpdateCurrentEducation.CandidateId" />
+
+    <div class="form-group">
+        <label asp-for="UpdateCurrentEducation.CurrentEducation" class="control-label"></label>
+        <input asp-for="UpdateCurrentEducation.CurrentEducation" class="form-control" />
+        <span asp-validation-for="UpdateCurrentEducation.CurrentEducation" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update Current Education" class="btn btn-danger" />
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿@page
+@model ResumeBook.Pages.UpdateProjectLanguageFormModel
+@{
+    ViewData["Title"] = "UpdateProjectLanguageForm";
+}
+
+<h1>Update Project Language Form</h1>
+
+<form method="post" style="margin-top: 50px;">
+    <div class="form-group">
+        <label class="control-label">Agent Name</label>
+        <div>
+            <p class="form-control-static">@Model.Project.Title</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Current Project Language</label>
+        <div>
+            <p class="form-control-static">@Model.Project.Language</p>
+        </div>
+    </div>
+    <input type="hidden" asp-for="UpdateProjectLanguage.ProjectId" />
+
+    <div class="form-group">
+        <label asp-for="UpdateProjectLanguage.ProjectLanguage" class="control-label"></label>
+        <input asp-for="UpdateProjectLanguage.ProjectLanguage" class="form-control" />
+        <span asp-validation-for="UpdateProjectLanguage.ProjectLanguage" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update Project Language" class="btn btn-danger" />
+    </div>
+</form>
