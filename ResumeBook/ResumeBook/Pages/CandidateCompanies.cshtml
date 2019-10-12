@@ -1,0 +1,25 @@
+﻿@page
+@model ResumeBook.Pages.CandidateCompaniesModel
+@{
+}
+<h1>@Model.Projects.First().Language</h1>
+<h6>Have a quick look at all the candidates with knowledge of @Model.Projects.First().Language</h6>
+<div class="card-body">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var code in Model.Candidates)
+            {
+            <tr>
+                <td>@code.FirstName</td>
+                <td>@code.LastName</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

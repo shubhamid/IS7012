@@ -30,6 +30,7 @@ namespace ResumeBook.Models
         public string Industry { get; set; }
         [Required(ErrorMessage = "Please provide an Email Address")]
         [EmailAddress(ErrorMessage = "Please provide a valid email address")]
+        [CustomValidation(typeof(Candidate), "EmailEduValidation")]
         public string Email { get; set; }
         [Display(Name = "Total Years Of Experience")]
         public decimal TotalYearsOfExperience { get; set; }

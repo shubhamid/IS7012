@@ -20,7 +20,7 @@ namespace ResumeBook.Pages.Projects
 
         public IActionResult OnGet()
         {
-        ViewData["CandidateId"] = new SelectList(_context.Candidate, "ID", "Country");
+        ViewData["CandidateId"] = new SelectList(_context.Candidate, "ID", "FirstName");
             return Page();
         }
 

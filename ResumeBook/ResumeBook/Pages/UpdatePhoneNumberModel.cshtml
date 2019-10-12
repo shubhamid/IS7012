@@ -1,0 +1,30 @@
+﻿@page
+@model ResumeBook.Pages.UpdatePhoneNumberModelModel
+@{
+}
+
+    <form method="post" style="margin-top: 50px;">
+        <div class="form-group">
+            <label class="control-label">Agent Name</label>
+            <div>
+                <p class="form-control-static">@Model.Candidate.FirstName @Model.Candidate.LastName</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Current Phone Number</label>
+            <div>
+                <p class="form-control-static">@Model.Candidate.PhoneNumber</p>
+            </div>
+        </div>
+        <input type="hidden" asp-for="ChangePhoneNumber.CandidateId" />
+
+        <div class="form-group">
+            <label asp-for="ChangePhoneNumber.PhoneNumber" class="control-label"></label>
+            <input asp-for="ChangePhoneNumber.PhoneNumber" class="form-control" />
+            <span asp-validation-for="ChangePhoneNumber.PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update Phone Number" class="btn btn-danger" />
+        </div>
+    </form>

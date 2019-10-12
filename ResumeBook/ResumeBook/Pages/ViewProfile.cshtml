@@ -2,6 +2,143 @@
 @model ResumeBook.Pages.ViewProfileModel
 @{
 }
-
-<h1>Country Profile</h1>
-<h2>@Model.Candidate.FirstName @Model.Candidate.LastName</h2>
+    <table>
+        <tr>
+            <td rowspan="2">
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <h1>@Model.Candidate.FirstName.ToUpper()</h1>
+                        </tr>
+                        <tr>
+                            <h1>@Model.Candidate.LastName.ToUpper()</h1>
+                        </tr>
+                        <tr>
+                            <h6>@Model.Candidate.Headline.ToUpper()</h6>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-black-50 text-uppercase">About Me</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.Candidate.About</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-black-50 text-uppercase">Education</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var code in Model.Candidate.Educations)
+                        {
+                            <tr>
+                                <th scope="row">@code.School - @code.Degree</th>
+                            </tr>
+                            <tr>
+                                <td>Start Date</td>
+                                <td>@code.StartDate.Date.ToShortDateString()</td>
+                            </tr>
+                            <tr>
+                                <td>End Date</td>
+                                <td>@code.EndDate.Date.ToShortDateString()</td>
+                            </tr>
+                            <tr>
+                                <td>City</td>
+                                <td>@code.City</td>
+                            </tr>
+                            <tr>
+                                <td>Country</td>
+                                <td>@code.Country</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-black-50 text-uppercase">Experiences</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var code in Model.Candidate.Experiences)
+                        {
+                            <tr>
+                                <th scope="row">@code.Title</th>
+                            </tr>
+                            <tr>
+                                <td>Company</td>
+                                <td>@code.Company</td>
+                            </tr>
+                            <tr>
+                                <td>City</td>
+                                <td>@code.City</td>
+                            </tr>
+                            <tr>
+                                <td>Country</td>
+                                <td>@code.Country</td>
+                            </tr>
+                            <tr>
+                                <td>Currently Working Here</td>
+                                <td>@code.CurrentlyWorkingHere</td>
+                            </tr>
+                            <tr>
+                                <td>Start Date</td>
+                                <td>@code.StartDate.Date.ToShortDateString()</td>
+                            </tr>
+                            <tr>
+                                <td>End Date</td>
+                                <td>@code.EndDate.Date.ToShortDateString()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-black-50 text-uppercase">Projects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var code in Model.Candidate.Projects)
+                        {
+                            <tr>
+                                <th scope="row">@code.Title</th>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>@code.Description</td>
+                            </tr>
+                            <tr>
+                                <td>Langauge</td>
+                                <td>@code.Language</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>>

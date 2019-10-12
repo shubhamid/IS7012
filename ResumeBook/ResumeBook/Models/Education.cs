@@ -15,6 +15,8 @@ namespace ResumeBook.Models
         public string Degree { get; set; }
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please provide a Start Date")]
+        [CustomValidation(typeof(Education), "StartDateValidation")]
+        [CustomValidation(typeof(Education), "StartDateBeforeEndDateValidation")]
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
         [DataType(DataType.Date)]
@@ -43,8 +45,8 @@ namespace ResumeBook.Models
             {
                 return ValidationResult.Success;
             }
-            string errorMessage = "Start date must be a date on or after today.";
-            if (StartDate.Value.Date < DateTime.Today)
+            string errorMessage = "Start date must be a date on or before today.";
+            if (StartDate.Value.Date > DateTime.Today)
             {
                 return new ValidationResult(errorMessage);
             }

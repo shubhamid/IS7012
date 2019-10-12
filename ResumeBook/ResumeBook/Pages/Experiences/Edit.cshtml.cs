@@ -36,7 +36,7 @@ namespace ResumeBook.Pages.Experiences
             {
                 return NotFound();
             }
-           ViewData["CandidateId"] = new SelectList(_context.Candidate, "ID", "Country");
+           ViewData["CandidateId"] = new SelectList(_context.Candidate, "ID", "FirstName");
             return Page();
         }
 
